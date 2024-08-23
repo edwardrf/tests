@@ -18,3 +18,9 @@ jobs:
       run: |
         dig -t CNAME s.dayifu.net
         dig -t CAA s.dayifu.net
+
+    - name: Test bash var
+      run: |
+          echo "Hello, -${TAG_NAME:1}-"
+      env:
+        TAG_NAME: v1.2.3
