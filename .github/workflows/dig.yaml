@@ -1,0 +1,20 @@
+name: Dig
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    environment: dev
+
+    steps:
+    - name: Run dig
+      run: |
+        dig -T CNAME s.dayifu.net
+        dig -T CAA s.dayifu.net
