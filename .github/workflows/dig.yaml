@@ -16,5 +16,5 @@ jobs:
     steps:
     - name: Run dig
       run: |
-        dig -T CNAME s.dayifu.net
-        dig -T CAA s.dayifu.net
+        dig -t CNAME s.dayifu.net
+        dig -t CAA s.dayifu.net
